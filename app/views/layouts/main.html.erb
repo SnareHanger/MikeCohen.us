@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Oswald&v1' rel='stylesheet' type='text/css'>
+		<!-- <link type="text/css" rel="stylesheet" href="stylesheets/default.css"></style> -->
+		<%= stylesheet_link_tag "default" %>
+		<!-- <link rel="stylesheet" href="stylesheets/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" /> -->
+		<title>Mike Cohen - Dissonics</title>
+		<%= javascript_include_tag "jquery-1.6.2.min", "jquery.prettyPhoto", "scripts" %>
+		<!--<script type="text/javascript" src="js/jquery-1.6.2.min.js" ></script>
+		// 		<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+		// 		<script type="text/javascript" src="js/scripts.js"></script>-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24578801-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div id="header">
+				<h1><a class="noHover" href="index.html">Mike Cohen</a></h1>			
+				<div id="about">Mike Cohen is an artist and designer interested in creating works that play with people's perception of things.  He uses light, sound, sculpture and the screen to construct environments and ideas that gives a viewer the sense that something is different than what should be.  Having a long history of using computers back to the days of the Commodore 64, he has always been fascinated with technology. His current focus is in audio and visual performance and installation, ranging from creating new instruments to music visualization.</div>
+				<div id="contactInfo">
+					<li>e: <a href="mailto:info@mikecohen.us">info@mikecohen.us</a></li>
+					<li>t: <a href="http://www.twitter.com/SnareHanger">follow me on twitter</a></li>
+					<li>r: <a href="resume.pdf" target="_blank">resume</a></li>
+					<li>c: <a href="mike_cohen_cv.pdf" target="_blank">cv</a></li>
+				</div>
+			</div>
+			<div id="<%=@cssTitle%>Main">
+				<div class="projectImages">
+					<% @images.each do |i|%>
+						<a href="images/<%=@cssTitle%>/<%=i.imagePath%>"><img src="images/<%=@cssTitle%>/thumbs/<%=i.imagePath%>"></a><br/>
+					<% end %>
+					<!-- <a href="http://vimeo.com/18182788"><img src="images/dissonics/thumbs/dissonics_vid.jpg"/></a><br/>
+								<a href="images/dissonics/dissonics1.jpg"><img src="images/dissonics/thumbs/dissonics1.jpg"/></a><br/>
+								<a href="images/dissonics/dissonics2.jpg"><img src="images/dissonics/thumbs/dissonics2.jpg"/></a><br/>
+								<a href="images/dissonics/dissonics3.jpg"><img src="images/dissonics/thumbs/dissonics3.jpg"/></a><br/>
+								<a href="images/dissonics/dissonics4.jpg"><img src="images/dissonics/thumbs/dissonics4.jpg"/></a><br/>
+								<a href="images/dissonics/dissonics5.jpg"><img src="images/dissonics/thumbs/dissonics5.jpg"/></a> -->
+				</div>
+				<div class="upperSection">					
+					<span class="projectTitle"><%=@title%></span><br>
+					<span class="myTitle"><%=@position%></span>
+				</div>
+				<div class="projectText">
+				<%=sanitize @description, :tags => "p,li,ul"%>
+				<br/><span class="back">back</span>
+				</div>
+				
+			</div>
+			<div id="footer"><span>&copy; Michael Cohen 2011</span></div>
+		</div>	
+		
+	</body>
+</html>
+			
